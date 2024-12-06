@@ -1,0 +1,343 @@
+/* ticket.css */
+
+/* General reset for padding, margin, and font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+/* Ticket Box Styling */
+.ticket-box {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 99999;
+}
+
+.ticket-box.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ticket Header */
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 10px;
+}
+
+.ticket-header span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-button:hover {
+    color: #f00;
+}
+
+/* Screenshot Container */
+.screenshot-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    max-height: 300px;
+    /* Prevent the screenshot from being too large */
+    overflow: hidden;
+    /* Hide overflow to prevent scrolling */
+}
+
+.screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Form Styling */
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+.submit-button:focus {
+    outline: none;
+}
+
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 0px;
+    position: relative;
+    left: 0px;
+    /* Move the footer to the left side */
+    bottom: -10px;
+    /* Keep it above the color picker */
+    /* background-color: #0056b3; */
+}
+
+/* Footer Action Buttons (Undo, Clear, Save) */
+.footer-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Button styling for Ant Design buttons */
+.ant-btn {
+    margin: 3px;
+    font-size: 14px;
+    /* Smaller font size */
+    padding: 6px 10px;
+    /* Decreased padding */
+}
+
+.ant-btn:hover {
+    background-color: #f0f0f0;
+    size: 'small';
+    /* Lighter background on hover */
+}
+
+
+.color-picker {
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    background: #ff4d4f;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.color-picker-container {
+    position: absolute;
+    top: 5px;
+    left: 90%;
+    background: #d42124;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    /* background-color: #0088ff; */
+}
+
+.color-picker:hover {
+    background-color: #e43f3f;
+}
+
+/* Shape Toolbar Styles */
+.toolbar {
+    display: flex;
+    justify-content: space-around;
+    /* Evenly space buttons */
+    align-items: center;
+    padding: 10px;
+}
+
+.color-picker-container {
+    position: absolute;
+    right: 30%;
+}
+
+/* Icon button styling */
+.icon-button {
+    font-size: 24px;
+    /* Larger font for symbols */
+    padding: 10px 16px;
+    /* Adjust padding for better appearance */
+    border-radius: 4px;
+}
+
+/* Fixed Button Styling for Color Picker */
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+
+.footer-button {
+    margin: 5px;
+    padding: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer-button svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.floating-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 99999;
+    /* background-color: rgb(5, 1, 6); */
+}
+
+.floating-button-main {
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    /* background-color: aquamarine; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.floating-button-main:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button-menu {
+    height: 140px;
+    width: 80px;
+    display: flex;
+    position: absolute;
+    bottom: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* background-color: blueviolet; */
+    pointer-events: none;
+}
+
+.floating-button-container:hover .floating-button-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.floating-button-action {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-button-action:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+.floating-button-action svg {
+    font-size: 24px;
+    color: black;
+}
